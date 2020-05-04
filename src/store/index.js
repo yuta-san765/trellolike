@@ -1,17 +1,18 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import defaultBoard from '@/default-board'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import defaultBoard from '@/default-board';
+import { saveStatePlugin } from '@/utils';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
+
+const board = JSON.parse(localStorage.getItem('board')) || defaultBoard;
 
 export default new Vuex.Store({
+  plugins: [saveStatePlugin],
   state: {
-    board: defaultBoard
+    board,
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+  mutations: {},
+  actions: {},
+  modules: {},
+});
