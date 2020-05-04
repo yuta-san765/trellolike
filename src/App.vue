@@ -11,6 +11,9 @@ export default {};
 
 
 <style lang="scss">
+html {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
